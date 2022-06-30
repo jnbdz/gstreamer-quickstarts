@@ -6,6 +6,7 @@ GStreamer quickstarts
 ## Resources
 - [GDtreamer official website](https://gstreamer.freedesktop.org/)
 - [GStreamer GitHub mirrors | GitHub](https://github.com/GStreamer)
+- [GStreamer | Documentation](https://gstreamer.freedesktop.org/documentation/?gi-language=c)
 - [Fundamentals of AV over IP | Matrox Video](https://www.matrox.com/en/video/media/guides-articles/fundamentals-of-av-over-ip)
 - [OpenHMD | Free and Open Source API and drivers for immersive technology](https://github.com/OpenHMD)
 ### Alternatives
