@@ -37,6 +37,9 @@ pipeline =
       NULL);
 ```
 
+- [`gst_parse_launch`](https://gstreamer.freedesktop.org/documentation/gstreamer/gstparse.html#gst_parse_launch) - Used for simple piplines (shortcut). It converts textual representation of a pipeline into an actual pipeline 
+- [playbin](https://gstreamer.freedesktop.org/documentation/playback/playbin.html#playbin) - 
+
 ## Module inspection
 Test audio: 
 ```bash
@@ -180,8 +183,15 @@ Element Properties:
 ```
 *Source: [audiotestsrc](./audiotestsrc.txt)*
 
-- [`gst_parse_launch`](https://gstreamer.freedesktop.org/documentation/gstreamer/gstparse.html#gst_parse_launch) - Used for simple piplines (shortcut). It converts textual representation of a pipeline into an actual pipeline 
-- [playbin](https://gstreamer.freedesktop.org/documentation/playback/playbin.html#playbin) - 
+To use the param: 
+```bash
+gst-launch-1.0 audiotestsrc wave=1 volume=1 ! alsasink
+```
+> **WARNING!** Very loud sound!
+
+> **NOTE:** Sometimes the `!` setting the caps or filter not just passing to the other module.
+
+
 
 ## Resources
 - [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
