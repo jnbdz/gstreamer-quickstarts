@@ -1,55 +1,3 @@
-# Tutorials | GStreamer | Quickstarts
-You can download this video for the tutorial: https://durian.blender.org/download/
-
-## Hello World!
-For the Hello World! we will play the video: Sintel.
-
-In this directory you will find `basic-tutorial-1`.
-
-To compile: 
-```bash
-gcc basic-tutorial-1.c -o basic-tutorial-1 `pkg-config --cflags --libs gstreamer-1.0`
-```
-Execute: 
-```bash
-./basic-tutorial-1
-```
-You should see a window popup with a video playing (it uses buffering so with slow internet you will see it pause).
-
-The video that plays is from: https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm
-
-**Breakdown:** 
-```c
-/* Initialize GStreamer */
-gst_init (&argc, &argv);
-```
-*Is required*
-- Initializes all internal structures
-- Checks what plug-ins are available
-- Executes any command-line option intended for GStreamer
-
-The command-line parameters are pass to `gst_init` so that you can benefit from GStreamer standard command-line options.
-
-```c
-pipeline =
-      gst_parse_launch
-      ("playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm",
-      NULL);
-```
-
-## Module inspection
-Test audio: 
-```bash
-gst-launch-1.0 audiotestsrc ! alsasink
-```
-To inspect a module: 
-```bash
-gst-inspect-1.0 audiotestsrc
-```
-**Output:**
-
-Name, source, etc: 
-```
 Factory Details:
   Rank                     none (0)
   Long-name                Audio test source
@@ -74,20 +22,10 @@ GObject
              +----GstElement
                    +----GstBaseSrc
                          +----GstAudioTestSrc
-```
 
-- `src` means source
-- Source also known as *output* that the *sink* takes in
-
-In this case this module is a source: 
-```
 Pad Templates:
   SRC template: 'src'
     Availability: Always
-```
-
-These are the formats that it supports (what it can do): 
-```
     Capabilities:
       audio/x-raw
                  format: { (string)S16LE, (string)S16BE, (string)U16LE, (string)U16BE, (string)S24_32LE, (string)S24_32BE, (string)U24_32LE, (string)U24_32BE, (string)S32LE, (string)S32BE, (string)U32LE, (string)U32BE, (string)S24LE, (string)S24BE, (string)U24LE, (string)U24BE, (string)S20LE, (string)S20BE, (string)U20LE, (string)U20BE, (string)S18LE, (string)S18BE, (string)U18LE, (string)U18BE, (string)F32LE, (string)F32BE, (string)F64LE, (string)F64BE, (string)S8, (string)U8 }
@@ -101,10 +39,6 @@ Element has no URI handling capabilities.
 Pads:
   SRC: 'src'
     Pad Template: 'src'
-```
-
-These are the properties that you can set: 
-```
 
 Element Properties:
   apply-tick-ramp     : Apply ramp to tick samples
@@ -177,21 +111,3 @@ Element Properties:
                            (10): red-noise        - Red (brownian) noise
                            (11): blue-noise       - Blue noise
                            (12): violet-noise     - Violet noise
-```
-*Source: [audiotestsrc](./audiotestsrc.txt)*
-
-- [`gst_parse_launch`](https://gstreamer.freedesktop.org/documentation/gstreamer/gstparse.html#gst_parse_launch) - Used for simple piplines (shortcut). It converts textual representation of a pipeline into an actual pipeline 
-- [playbin](https://gstreamer.freedesktop.org/documentation/playback/playbin.html#playbin) - 
-
-## Resources
-- [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
-### Codecs
-- [Video Encoding Basics: What is a Video Codec? - Haivision](https://www.haivision.com/blog/all/video-encoding-basics-what-is-a-video-codec/)
-### Videos
-- [Using GStreamer | YouTube](https://www.youtube.com/watch?v=ZphadMGufY8)
-- [Introduction to Gstreamer (Gst-launch) for embedded devices raspberry pi jetson nano | YouTube](https://www.youtube.com/watch?v=rPcQiDHyGnI)
-- [Jetson Xavier NX Lesson 4: Understanding Gstreamer for Absolute Beginners | YouTube](https://www.youtube.com/watch?v=_yU1kfcC6rY)
-#### Codecs
-- [How Codecs Work - Tutorial | Vimeo](https://vimeo.com/104554788)
-- [Video Codecs & Compression Guide (Feat. Atomos Ninja V) | YouTube](https://www.youtube.com/watch?v=wX9KGRHaMEY)
-- [How to Understand Codecs | YouTube](https://www.youtube.com/watch?v=sisvOeZItb0)
