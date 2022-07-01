@@ -191,7 +191,19 @@ gst-launch-1.0 audiotestsrc wave=1 volume=1 ! alsasink
 
 > **NOTE:** Sometimes the `!` setting the caps or filter not just passing to the other module.
 
+> **IMPORTANT!** Inspect also the sync (module) to make sure it supports the format that is ouputed.
 
+- *caps* setting caps you will need `,` between settings
+
+Example with *caps* (where the audio format is changed): 
+```bash
+gst-launch-1.0 audiotestsrc wave=1 freq=300 volume=0.1 ! audio/x-raw,format=U8 ! alsasink
+```
+
+Example with a converter: 
+```bash
+gst-launch-1.0 audiotestsrc wave=1 freq=300 volume=0.1 ! audio/x-raw,format=U18LE ! audioconvert ! alsasink
+```
 
 ## Resources
 - [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
