@@ -41,6 +41,7 @@ pipeline =
 - [playbin](https://gstreamer.freedesktop.org/documentation/playback/playbin.html#playbin) - 
 
 ## Module inspection
+### Audio Test
 Test audio: 
 ```bash
 gst-launch-1.0 audiotestsrc ! alsasink
@@ -204,6 +205,17 @@ Example with a converter:
 ```bash
 gst-launch-1.0 audiotestsrc wave=1 freq=300 volume=0.1 ! audio/x-raw,format=U18LE ! audioconvert ! alsasink
 ```
+> `audioconvert` will identify what the *sink* needs as input format and will convert the audio from the output into that format automatically.
+
+You can always do it manually by using `gst-inspect-1.0` to find out the supported formats.
+
+### Video Test
+```bash
+gst-launch-1.0 videotestsrc ! ximagesink
+```
+You will see an basic video in a small popup window.
+
+
 
 ## Resources
 - [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
