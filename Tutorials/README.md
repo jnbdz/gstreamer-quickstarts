@@ -215,6 +215,36 @@ gst-launch-1.0 videotestsrc ! ximagesink
 ```
 You will see an basic video in a small popup window.
 
+Here is an example with another pattern: 
+```bash
+gst-launch-1.0 videotestsrc pattern=11 ! ximagesink
+```
+This will show a circle pattern.
+
+Example where you change the video format: 
+```bash
+gst-launch-1.0 videotestsrc ! video/x-raw,format=BGR ! ximagesink
+```
+
+It will return an error: 
+```
+Setting pipeline to PAUSED ...
+Pipeline is PREROLLING ...
+ERROR: from element /GstPipeline:pipeline0/GstVideoTestSrc:videotestsrc0: Internal data stream error.
+Additional debug info:
+../libs/gst/base/gstbasesrc.c(3127): gst_base_src_loop (): /GstPipeline:pipeline0/GstVideoTestSrc:videotestsrc0:
+streaming stopped, reason not-negotiated (-4)
+ERROR: pipeline doesn't want to preroll.
+Setting pipeline to NULL ...
+Freeing pipeline ...
+```
+
+This is caused by `ximagesink` because it does not support: BGR.
+
+The solution: 
+```bash
+
+```
 
 
 ## Resources
