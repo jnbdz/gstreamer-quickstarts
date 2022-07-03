@@ -243,8 +243,34 @@ This is caused by `ximagesink` because it does not support: BGR.
 
 The solution: 
 ```bash
-
+gst-launch-1.0 videotestsrc ! video/x-raw,format=BGR ! autovideoconvert ! ximagesink
 ```
+> **WARNING!** I get an error. Here is a link to the issue ticket: [gst-launch-1.0 freezes when I use autovideoconvert and I don't see the test video | superuser.com](https://superuser.com/questions/1729565/gst-launch-1-0-freezes-when-i-use-autovideoconvert-and-i-dont-see-the-test-vide).
+
+To resize the video output: 
+```bash
+gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw, width=1280, height=960 ! ximagesink
+```
+In some cases you might need this instead: 
+```bash
+gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw,format=BGR ! autovideoconvert ! video/x-raw, width=1280, height=960 ! ximagesink
+```
+> **NOTE:** *capability vs property:* Properties go with the command/module and capabilities come afterwards.
+
+Example where the framerate is changed: 
+```bash
+gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw, width=1280, height=960, framerate=30/1 ! ximagesink
+```
+
+> The source limits how fast a framerate can go, but you can slow it down (e.g.: `1/1` (This is one frame per second)).
+
+If you want to use the Jetson Xavier webcam (the same as raspberryPI) you can do this: 
+```bash
+gst-launch-1.0 nvarguscamerasrc ! autovideoconvert ! ximagesink
+```
+
+> **WARNING!** I have not tested this yet.
+
 
 
 ## Resources
