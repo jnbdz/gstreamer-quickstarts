@@ -40,6 +40,8 @@ pipeline =
 - [`gst_parse_launch`](https://gstreamer.freedesktop.org/documentation/gstreamer/gstparse.html#gst_parse_launch) - Used for simple piplines (shortcut). It converts textual representation of a pipeline into an actual pipeline 
 - [playbin](https://gstreamer.freedesktop.org/documentation/playback/playbin.html#playbin) - 
 
+
+
 ## Elements States
 - **NULL:** Deactivated, element occupies no resources
 - **READY:** Check and allocate resources
@@ -314,16 +316,16 @@ Here is a another workign example:
 gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw, width=1280, height=960, framerate=30/1 ! agingtv ! coloreffects preset=sepia ! ximagesink
 ```
 
-
-
 ## Resources
 - [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
+- [Jetson Xavier NX Lesson 3: Using a WEB cam or Raspberry Pi camera in OpenCV with Gstreamer | toptechboy.com](https://toptechboy.com/jetson-xavier-nx-lesson-3-using-a-web-cam-or-raspberry-pi-camera-in-opencv-with-gstreamer/)
 ### Codecs
 - [Video Encoding Basics: What is a Video Codec? - Haivision](https://www.haivision.com/blog/all/video-encoding-basics-what-is-a-video-codec/)
 ### Videos
 - [Using GStreamer | YouTube](https://www.youtube.com/watch?v=ZphadMGufY8)
 - [Introduction to Gstreamer (Gst-launch) for embedded devices raspberry pi jetson nano | YouTube](https://www.youtube.com/watch?v=rPcQiDHyGnI)
 - [Jetson Xavier NX Lesson 4: Understanding Gstreamer for Absolute Beginners | YouTube](https://www.youtube.com/watch?v=_yU1kfcC6rY)
+- [Jetson Xavier NX Lesson 5: Improving Raspberry Pi Camera Image Quality in Gstreamer | YouTube](https://www.youtube.com/watch?v=R_d_McJ2stg)
 #### Codecs
 - [How Codecs Work - Tutorial | Vimeo](https://vimeo.com/104554788)
 - [Video Codecs & Compression Guide (Feat. Atomos Ninja V) | YouTube](https://www.youtube.com/watch?v=wX9KGRHaMEY)
