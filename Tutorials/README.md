@@ -40,6 +40,16 @@ pipeline =
 - [`gst_parse_launch`](https://gstreamer.freedesktop.org/documentation/gstreamer/gstparse.html#gst_parse_launch) - Used for simple piplines (shortcut). It converts textual representation of a pipeline into an actual pipeline 
 - [playbin](https://gstreamer.freedesktop.org/documentation/playback/playbin.html#playbin) - 
 
+## Elements States
+- **NULL:** Deactivated, element occupies no resources
+- **READY:** Check and allocate resources
+- **PAUSED:** pre-roll, i.e. get a buffer to each sink
+- **PLAYING:** active dataflow, running-time is increasing
+- **NULL-READY-PAUSED-PLAYING:** State changes always go through intermediate states
+    - GStreamer core handles that automatically
+- Upward state changes can be asynchronous
+- Downward state changes are always synchronous
+
 ## Module inspection
 ### Audio Test
 Test audio: 
@@ -82,6 +92,12 @@ GObject
 
 - `src` means source
 - Source also known as *output* that the *sink* takes in
+- `sink` that takes data in
+- `filter` is a `sink` and a `src`
+- You also have *request pads*
+    - demuxer - sink + src_1/src_2
+    - muxer - sink_1/sink_2 and src
+    - tee - sin and src_1/src_2
 
 In this case this module is a source: 
 ```
@@ -277,6 +293,26 @@ gst-launch-1.0 nvarguscamerasrc ! nvvidconv flip-method=2 ! video/x-raw,width=12
 ```
 
 > **WARNING!** I have not tested this yet.
+
+
+```bash
+gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM),with=3264,height=2464,framerate=21/1' ! nvvidconv flip-method=2 ! video/x-raw,width=640,height=480 ! ximagesink
+```
+
+```bash
+gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM),with=3264,height=2464,framerate=21/1' ! nvvidconv flip-method=2 ! video/x-raw,width=800,height=600 ! agingtv ! ximagesink
+```
+- `agingtv` will make the video look like something that was filmed back in the 10's.
+- `coloreffects preset=sepia` changes the color to something closer of the 10's.
+
+> **NOTE:** You have to add the `'` because you have `()` in the command.
+
+> **NOTE:** By default it does not resize it crops. So you need a good GPU (or CPU) and 
+
+Here is a another workign example: 
+```bash
+gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw, width=1280, height=960, framerate=30/1 ! agingtv ! coloreffects preset=sepia ! ximagesink
+```
 
 
 
