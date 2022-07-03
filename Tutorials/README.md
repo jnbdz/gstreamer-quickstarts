@@ -271,6 +271,13 @@ gst-launch-1.0 nvarguscamerasrc ! autovideoconvert ! ximagesink
 
 > **WARNING!** I have not tested this yet.
 
+The output video from the webcam will be upsidedown. Here is an example where the video is flip over: 
+```bash
+gst-launch-1.0 nvarguscamerasrc ! nvvidconv flip-method=2 ! video/x-raw,width=1280,height=840 ! autovideoconvert ! ximagesink
+```
+
+> **WARNING!** I have not tested this yet.
+
 
 
 ## Resources
