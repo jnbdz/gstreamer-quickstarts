@@ -9,6 +9,10 @@ GStreamer quickstarts
 - [GStreamer | Documentation](https://gstreamer.freedesktop.org/documentation/?gi-language=c)
 - [Fundamentals of AV over IP | Matrox Video](https://www.matrox.com/en/video/media/guides-articles/fundamentals-of-av-over-ip)
 - [OpenHMD | Free and Open Source API and drivers for immersive technology](https://github.com/OpenHMD)
+### Help
+- [GStreamer Appchat - gstreamer freenode - GStreamer, Multimedia | en.irc2go.com](https://en.irc2go.com/webchat/?net=freenode&room=gstreamer)
+    - irc://chat.freenode.net:6667/
+    - ircs://chat.freenode.net:6697/
 ### Alternatives
 - [OpenMAX Overview - The Khronos Group Inc](https://www.khronos.org/openmax/)
 ### Companies that use GStreamer
