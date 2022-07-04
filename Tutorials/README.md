@@ -53,6 +53,15 @@ pipeline =
 - Downward state changes are always synchronous
 
 ## Module inspection
+- Lists details and features of a plugin or of a GstElement factory
+- Uses the GStreamer registry
+- Examples: 
+    - `gst-inspect-1.0` - 
+    - `gst-inspect-1.0 -a` - good for grepping
+    - `gst-inspect-1.0 /path/to/libgstcoreelements.so` - 
+    - `gst-inspect-1.0 coreelements` - plugin name
+    - `gst-inspect-1.0 identity` - element/feature name
+
 ### Audio Test
 Test audio: 
 ```bash

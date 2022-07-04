@@ -9,6 +9,7 @@ GStreamer quickstarts
 - [GStreamer | Documentation](https://gstreamer.freedesktop.org/documentation/?gi-language=c)
 - [Fundamentals of AV over IP | Matrox Video](https://www.matrox.com/en/video/media/guides-articles/fundamentals-of-av-over-ip)
 - [OpenHMD | Free and Open Source API and drivers for immersive technology](https://github.com/OpenHMD)
+- [GStreamer Network Video Stream and Save to File | jetsonhacks.com](https://jetsonhacks.com/2014/10/28/gstreamer-network-video-stream-save-file/)
 ### Help
 - [GStreamer Appchat - gstreamer freenode - GStreamer, Multimedia | en.irc2go.com](https://en.irc2go.com/webchat/?net=freenode&room=gstreamer)
     - <a href="irc://chat.freenode.net:6667/">irc://chat.freenode.net:6667/</a>
@@ -19,3 +20,5 @@ GStreamer quickstarts
 - [Thermal Imaging, Night Vision and Infrared Camera Systems | Teledyne FLIR](https://www.flir.ca/)
 ### StackExchange Questions
 - [gst-launch-1.0 freezes when I use autovideoconvert and I don't see the test video | superuser.com](https://superuser.com/questions/1729565/gst-launch-1-0-freezes-when-i-use-autovideoconvert-and-i-dont-see-the-test-vide)
+### Video
+- [Gstreamer RTSP Server Client to get audio working on Windows 10 Hyper-V virtual machine Ubuntu 20.04 | YouTube](https://www.youtube.com/watch?v=VYbOBTeLIq0)
