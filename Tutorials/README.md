@@ -248,7 +248,7 @@ You can always do it manually by using `gst-inspect-1.0` to find out the support
 
 Example where you animate the audio: 
 ```bash
-gst-lauch-1.0 auditestsrc ! audioconvert ! autoaudiosink audiotestsrc wave=pink-noise ! spacescope ! videoconvert ! autovideosink
+gst-launch-1.0 audiotestsrc ! audioconvert ! autoaudiosink audiotestsrc wave=pink-noise ! spacescope ! videoconvert ! autovideosink
 ```
 
 ### Video Test
