@@ -52,13 +52,23 @@ pipeline =
 - Upward state changes can be asynchronous
 - Downward state changes are always synchronous
 
+### Element Properties & Signals
+- Properties: to modify the behaviour (for config most of the time)
+- Signals: for hooking to get notif or to exec a funct call on the element (actions signals) (callbacks)
+- Different for every type of element
+- Introspectable at runtime
+    - Names
+    - types/signatures
+    - description
+- Plugins provide no header files: GObject and GStreamer API is the only API there
+
 ## Module inspection
 - Lists details and features of a plugin or of a GstElement factory
 - Uses the GStreamer registry
 - Examples: 
-    - `gst-inspect-1.0` - 
-    - `gst-inspect-1.0 -a` - good for grepping
-    - `gst-inspect-1.0 /path/to/libgstcoreelements.so` - 
+    - `gst-inspect-1.0` - Get a list of all the plugins
+    - `gst-inspect-1.0 -a` - Better for grepping the list of plugins (it also gives you all the doc for each plugin)
+    - `gst-inspect-1.0 /path/to/libgstcoreelements.so` - Practical to get information on a plugin that you are building (wasn't installed yet)
     - `gst-inspect-1.0 coreelements` - plugin name
     - `gst-inspect-1.0 identity` - element/feature name
 
@@ -236,6 +246,11 @@ gst-launch-1.0 audiotestsrc wave=1 freq=300 volume=0.1 ! audio/x-raw,format=U18L
 
 You can always do it manually by using `gst-inspect-1.0` to find out the supported formats.
 
+Example where you animate the audio: 
+```bash
+gst-lauch-1.0 auditestsrc ! audioconvert ! autoaudiosink audiotestsrc wave=pink-noise ! spacescope ! videoconvert ! autovideosink
+```
+
 ### Video Test
 ```bash
 gst-launch-1.0 videotestsrc ! ximagesink
@@ -324,6 +339,19 @@ Here is a another workign example:
 ```bash
 gst-launch-1.0 videotestsrc pattern=0 ! video/x-raw, width=1280, height=960, framerate=30/1 ! agingtv ! coloreffects preset=sepia ! ximagesink
 ```
+
+## `gst-launch-1.0`
+- Simple lang for building pipelines and run them
+- Manly used for debugging (Also available as a C API too for integration into applications)
+- You can get more details by using the `-v` flag
+- Downside: doesn't have a lot of flexibility (can't change anything on the fly)
+
+Example (audio): 
+```bash
+gst-launch-1.0 audiotestsrc ! audioconvert ! autoaudiosink
+```
+
+
 
 ## Resources
 - [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
