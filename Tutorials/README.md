@@ -62,6 +62,40 @@ pipeline =
     - description
 - Plugins provide no header files: GObject and GStreamer API is the only API there
 
+## Elements Linking - Pads
+- Elements can be linked on their Pads to define the dataflow (must be compatible: opposite direction (src->sink) and compatible capabilities (*Caps*))
+- Pads are created from *Pad Templates*:
+    - Name (template), direction, availability and all possible Caps of the Pads
+    - Availability: always, sometimes or request Pads
+    - Pad template are what is shown in gst-inspect-1.0
+
+### Caps
+- simple caps: 
+    - video/x-h264, with=...;
+- multiple GstStructure: 
+    - video/x-h264, ...; video/mpeg, ...;
+- Can be *fixed* or *unfixed* (i.e. multiple structures or one of the fields has ranges or lists)
+    - `video/x-h264; video/mpeg,mpegversion=[1,2]`
+- Special caps: **ANY** (any caps can be used don't need to find compatibility) and **EMPTY** (when there are not possibel results) caps
+- Generic set operations defined on them: 
+    - Intersect, is-subset, can-intersect
+- Caps features for advanced use cases
+    - `video/x-raw(memory:GstGLMemory), width=1920, height=1080` (`memory:GstGLMemory` can be useful for passing if you are passing buffers of OpenGL for things like Opaque buffers (between Hardware decoders in embeded systems))
+    - Conjunction of additional constraints for the media type
+- Pads negociate a single fixed caps for data flow
+- Conventions: 
+    - Naming for media types, caps features and fields
+        - lower case letters
+        - numbers
+        - no spaces
+    - Types often omitted, GStreamer will try to find the right type when converting a caps string into a caps object internally. Most of the time it works, unless you use framerate=30 which would end up being framerate=(int)30 and not (fraction)20/1.
+    - Sometimes fields have unexpected types (e.g.: level=(string)5 (here level=2b is a possibility too))
+
+Example:
+```bash
+
+```
+
 ## Module inspection
 - Lists details and features of a plugin or of a GstElement factory
 - Uses the GStreamer registry
@@ -351,7 +385,13 @@ Example (audio):
 gst-launch-1.0 audiotestsrc ! audioconvert ! autoaudiosink
 ```
 
-
+## `gst-typefind-1.0`
+- Uses the typefinders to detect the Caps of a file
+- Examples: 
+    - `$ gst-typefind-1.0 test.mp3`
+        - test.mp3 - application/xid3
+    - `$ gst-typefind-1.0 test.avi`
+        - test.avi - video/x-msvideo
 
 ## Resources
 - [Tutorials | gstreamer.freedesktop.org](https://gstreamer.freedesktop.org/documentation/tutorials/index.html?gi-language=c) - This version is for *C* but you can follow the tutorial with *Python* or even *JavaScript*.
