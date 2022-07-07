@@ -3,6 +3,11 @@
 # gstreamer-quickstarts
 GStreamer quickstarts
 
+## Media Streaming Standards
+- [MPEG transport stream | Wikipedia](https://en.wikipedia.org/wiki/MPEG_transport_stream)
+- [Dynamic Adaptive Streaming over HTTP | Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) - *Dynamic Adaptive Streaming over HTTP (DASH), also known as MPEG-DASH, is an adaptive bitrate streaming technique that enables high quality streaming of media content over the Internet delivered from conventional HTTP web servers.* (file extension: `.ts, .tsv, .tsa, .m2t`, mime type: `video/MP2T`) (example of content generator: [MP4Box | Wikipedia](https://en.wikipedia.org/wiki/MP4Box) used by [Télécom Paris | Wikipedia](https://en.wikipedia.org/wiki/T%C3%A9l%C3%A9com_Paris))
+- [HTTP Live Streaming | Wikipedia](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) - *HTTP Live Streaming (also known as HLS) is an HTTP-based adaptive bitrate streaming communications protocol developed by Apple Inc. and released in 2009.* (file ext: `.m3u8`, mime type: `application/vnd.apple.mpegurl` or `audio/mpegurl`)
+
 ## Resources
 - [GDtreamer official website](https://gstreamer.freedesktop.org/)
 - [GStreamer GitHub mirrors | GitHub](https://github.com/GStreamer)
@@ -34,4 +39,6 @@ GStreamer quickstarts
 ### Other
 - [GPAC | Multimedia Open Source Project](http://gpac.io/) ([GPAC | GitHub](https://github.com/gpac/gpac)) - *Modular Multimedia framework for packaging, streaming and playing your favorite content.*
     - [MP4Box | GitHub](https://github.com/gpac/gpac/wiki/MP4Box) - The multimedia packager available in GPAC is called MP4Box. It is mostly designed for processing ISOBMF files (e.g. MP4, 3GP), but can also be used to import/export media from container files like AVI, MPG, MKV, MPEG-2 TS.
-    - `mediainfo` - command line utility to display information about audio/video files
+- `mediainfo` - command line utility to display information about audio/video files
+- [TSDuck, The MPEG Transport Stream Toolkit](https://tsduck.io/) - *TSDuck is an extensible toolkit for MPEG transport streams. It is used in digital television systems for test, monitoring, integration, debug, lab, demo.*
+- [ExoPlayer](https://exoplayer.dev/) - *ExoPlayer is an application level media player for Android. It provides an alternative to Android’s MediaPlayer API for playing audio and video both locally and over the Internet. ExoPlayer supports features not currently supported by Android’s MediaPlayer API, including DASH and SmoothStreaming adaptive playbacks. Unlike the MediaPlayer API, ExoPlayer is easy to customize and extend, and can be updated through Play Store application updates.*
