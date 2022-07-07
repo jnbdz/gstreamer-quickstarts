@@ -5,6 +5,7 @@ GStreamer quickstarts
 
 ## Acronym
 - **OTT:** over-the-top - *is a means of providing television and film content over the internet at the request and to suit the requirements of the individual consumer. The term itself stands for “over-the-top”, which implies that a content provider is going over the top of existing internet services.* ([source](https://www.telestream.net/video/solutions/what-is-ott.htm))
+- **DAI (workflows):** Dynamic Ad Insertion
 
 ## Media Streaming Standards
 - [MPEG transport stream | Wikipedia](https://en.wikipedia.org/wiki/MPEG_transport_stream) - *MPEG transport stream (MPEG-TS, MTS) or simply transport stream (TS) is a standard digital container format for transmission and storage of audio, video, and Program and System Information Protocol (PSIP) data.[5] It is used in broadcast systems such as DVB, ATSC and IPTV.*  (file extension: `.ts, .tsv, .tsa, .m2t`, mime type: `video/MP2T`) (example of content generator: [MP4Box | Wikipedia](https://en.wikipedia.org/wiki/MP4Box) used by [Télécom Paris | Wikipedia](https://en.wikipedia.org/wiki/T%C3%A9l%C3%A9com_Paris))
