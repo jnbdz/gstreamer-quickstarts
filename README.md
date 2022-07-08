@@ -27,7 +27,7 @@ GStreamer quickstarts
     - <a href="irc://chat.freenode.net:6667/">irc://chat.freenode.net:6667/</a>
     - <a href="ircs://chat.freenode.net:6697/">ircs://chat.freenode.net:6697/</a>
 ### Alternatives
-- [OpenMAX Overview - The Khronos Group Inc](https://www.khronos.org/openmax/)
+- [OpenMAX Overview - The Khronos Group Inc](https://www.khronos.org/openmax/) - *OpenMAX™ is a royalty-free, cross-platform API that provides comprehensive streaming media codec and application portability by enabling accelerated multimedia components to be developed, integrated and programmed across multiple operating systems and silicon platforms. The OpenMAX API will be shipped with processors to enable library and codec implementers to rapidly and effectively make use of the full acceleration potential of new silicon - regardless of the underlying hardware architecture.*
 ### Companies that use GStreamer
 - [Thermal Imaging, Night Vision and Infrared Camera Systems | Teledyne FLIR](https://www.flir.ca/)
 ### StackExchange Questions
