@@ -19,6 +19,9 @@ GStreamer quickstarts
 - [Fundamentals of AV over IP | Matrox Video](https://www.matrox.com/en/video/media/guides-articles/fundamentals-of-av-over-ip)
 - [OpenHMD | Free and Open Source API and drivers for immersive technology](https://github.com/OpenHMD)
 - [GStreamer Network Video Stream and Save to File | jetsonhacks.com](https://jetsonhacks.com/2014/10/28/gstreamer-network-video-stream-save-file/)
+### Libs
+- [gstreamer-java | GitHub](https://github.com/gstreamer-java/)
+- [go-gst | GitHub](https://github.com/tinyzimmer/go-gst)
 ### CheatSheet
 - [GStreamer command-line cheat sheet | GitHub](https://github.com/jnbdz/gstreamer-cheat-sheet)
 - [GStreamer Pipelines | GitHub](https://github.com/jnbdz/gstreamerCheatsheet)
